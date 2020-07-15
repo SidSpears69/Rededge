@@ -101,7 +101,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: "source/",
           src: [
-            "fonts/**/*.{woff,woff2}",
+            "fonts/**/*",
             "img/**",
             "js/**",
             "vendors/**",
