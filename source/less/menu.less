@@ -1,5 +1,8 @@
 .menu {
     flex-grow: 1;
+    &--header {
+        margin: 0 28px;
+    }
     &--footer {
         margin-right: 103px;
         display: flex;
@@ -9,10 +12,10 @@
 }
 .menu__list {
     display: flex;
+    flex-wrap: wrap;
 }
 .menu__item {
-    margin-left: 17px;
-    margin-right: 17px;
+    margin: 5px 17px;
 }
 .menu__link {
     background-image: linear-gradient(currentColor, currentColor);
@@ -24,4 +27,92 @@
     background-size: 100% 1px;
     transition: background-size 0.3s linear;
   }
+}
+.menu__button {
+    display: none;
+}
+.menu__contacts {
+    display: none;
+}
+@media @medium {
+    .menu--header {
+        margin: 0 6px;
+    }
+    .menu__item {
+        margin: 5px 14px;
+    }
+}
+@media @small {
+    .menu {
+        order: -1;
+        flex-grow: 0;
+        &--footer {
+            display: none;
+        }
+    }
+    .menu__button {
+        display: block;
+        font-size: 0;
+        padding: 0;
+        border: none;
+        width: 48px;
+        height: 32px;
+        background-size: cover;
+        &--open {
+            background: url("../img/open-icon.svg") no-repeat;
+            width: 48px;
+            height: 32px;
+        }
+        &--close {
+            background: url("../img/close-icon.svg") no-repeat;
+            width: 24px;
+            height: 24px;
+            margin-bottom: 29px;
+            margin-left: 18px;
+            flex-shrink: 0;
+        }
+    }
+
+    .menu__wrapper {
+        display: flex;
+        position: fixed;
+        background: #ffffff;
+        top: 0;
+        height: 100vh;
+        width: 84%;
+        box-shadow: 0px 5px 16px rgba(90, 90, 90, 0.25);
+        z-index: 1000;
+        padding-top: 23px;
+        flex-direction: column;
+        overflow: auto;
+        left: -150vw;
+        transition: left 0.7s linear;
+    }
+    .opened .menu__wrapper {
+        display: flex;
+        left: 0;
+        transition: left 0.7s linear;
+    }
+    .menu__list {
+        flex-direction: column;
+        padding: 0 17px;
+    }
+    .menu__item {
+        margin: 13px 0;
+    }
+    .menu__contacts {
+        display: block;
+        padding: 36px 17px;
+        height: 47vh;
+        background-color: #211F2A;
+        color: #ffffff;
+        margin-top: auto;
+    }
+    .menu__phone {
+        font-weight: bold;
+        font-size: 20px;
+        color: #FFFFFF;
+        display: block;
+        margin-top: 15px;
+    }
 }

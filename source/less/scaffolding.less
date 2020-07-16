@@ -48,6 +48,10 @@ body {
     background-color: #ffffff;
     color: #2B2B2B;
     font-weight: normal;
+    &.opened {
+        height: 100vh;
+        overflow: hidden;
+    }
 }
 
 img {
@@ -87,4 +91,25 @@ a:focus {
 }
 button {
     cursor: pointer;
+}
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+@media @small {
+    h1 {
+        font-size: 36px;
+    }
+}
+@media @extra-small {
+    h1 {
+        font-size: 33px;
+        -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+    }
+    h2 {
+        font-size: 27px;
+      }
 }
