@@ -27,6 +27,14 @@ module.exports = function (grunt) {
         src: "build/css/*.css",
       }
     },
+    cmq: {
+      your_target: {
+        files: {
+          "source/css/style.css": ["source/css/style.css"],
+          "build/css/style.css": ["build/css/style.css"]
+        }
+      }
+    },
     watch: {
       html: {
         files: ["source/*.html"],
@@ -36,7 +44,7 @@ module.exports = function (grunt) {
       },
       style: {
         files: ["source/less/**/*.less"],
-        tasks: ["less", "postcss", "csso"]
+        tasks: ["less", "postcss", "csso", "cmq"]
       }
     },
     browserSync: {
@@ -125,5 +133,5 @@ module.exports = function (grunt) {
   });
   grunt.registerTask("serve", ["browserSync", "watch"]);
   grunt.registerTask("symbols", ["svgmin", "svgstore"]);
-  grunt.registerTask("build", ["clean", "copy", "less", "postcss", "csso", "symbols", "imagemin"]);
+  grunt.registerTask("build", ["clean", "copy", "less", "postcss", "csso","cmq", "symbols", "imagemin"]);
 };

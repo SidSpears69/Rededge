@@ -10,7 +10,7 @@ var mySwiper = new Swiper('.swiper-container', {
             slidesPerView: 2,
             slidesPerGroup: 2,
         },
-        991: {
+        992: {
             slidesPerView: 3,
             slidesPerGroup: 3,
         }
